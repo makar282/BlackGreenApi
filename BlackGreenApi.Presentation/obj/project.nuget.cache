@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Topk2N5qnIA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\makar\\source\\repos\\BlackGreenApi\\BlackGreenApi.Presentation\\BlackGreenApi.Presentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\makar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-rc.1.25451.107\\microsoft.aspnetcore.openapi.10.0.0-rc.1.25451.107.nupkg.sha512",
+    "C:\\Users\\makar\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\makar\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512"
+  ],
+  "logs": []
+}

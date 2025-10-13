@@ -1,0 +1,6 @@
+@BlackGreenApi.Core_HostAddress = http://localhost:5088
+
+GET {{BlackGreenApi.Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

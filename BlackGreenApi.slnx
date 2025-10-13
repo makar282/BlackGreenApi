@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BlackGreenApi.Application/BlackGreenApi.Application.csproj" />
+  <Project Path="BlackGreenApi.Core/BlackGreenApi.Core.csproj" />
+  <Project Path="BlackGreenApi.DataAccess/BlackGreenApi.DataAccess.csproj" />
+  <Project Path="BlackGreenApi.Presentation/BlackGreenApi.Presentation.csproj" />
+</Solution>
