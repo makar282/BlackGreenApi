@@ -1,6 +1,13 @@
 <Solution>
-  <Project Path="BlackGreenApi.Application/BlackGreenApi.Application.csproj" />
+  <Project Path="BlackGreenApi.Application/BlackGreenApi.Application.csproj">
+    <BuildDependency Project="BlackGreenApi.DataAccess/BlackGreenApi.DataAccess.csproj" />
+  </Project>
   <Project Path="BlackGreenApi.Core/BlackGreenApi.Core.csproj" />
-  <Project Path="BlackGreenApi.DataAccess/BlackGreenApi.DataAccess.csproj" />
-  <Project Path="BlackGreenApi.Presentation/BlackGreenApi.Presentation.csproj" />
+  <Project Path="BlackGreenApi.DataAccess/BlackGreenApi.DataAccess.csproj">
+    <BuildDependency Project="BlackGreenApi.Core/BlackGreenApi.Core.csproj" />
+  </Project>
+  <Project Path="BlackGreenApi.Presentation/BlackGreenApi.Presentation.csproj">
+    <BuildDependency Project="BlackGreenApi.Application/BlackGreenApi.Application.csproj" />
+    <BuildDependency Project="BlackGreenApi.Core/BlackGreenApi.Core.csproj" />
+  </Project>
 </Solution>

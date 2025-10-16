@@ -1,6 +1,8 @@
-﻿using SaveNature.Services.Interfaces;
+﻿using BlackGreenApi.Application.Services.Interfaces;
+using BlackGreenApi.Core.Models;
+using Newtonsoft.Json.Linq;
 
-namespace SaveNature.Services
+namespace BlackGreenApi.Application.Services
 {
     public class ParserJsonService(ApplicationDbContext dbContext,
         ILogger<RecommendationMatcherService> logger,

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlackGreenApi.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c59f672fb6fc9bb444bbde9144742c58d09f518")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlackGreenApi.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlackGreenApi.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

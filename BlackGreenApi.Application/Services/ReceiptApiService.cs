@@ -1,4 +1,7 @@
-﻿namespace SaveNature.Services
+﻿using BlackGreenApi.Application.Services.Interfaces;
+using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Application.Services
 {
     public class ReceiptApiService : IReceiptApi
     {
@@ -18,7 +21,9 @@
         public async Task<string> FetchReceiptAsync(QrCodeRequest request)
         {
             if (string.IsNullOrEmpty(request.QrRaw) && string.IsNullOrEmpty(request.QrUrl))
+            {
                 throw new ArgumentException("QrRaw or QrUrl must be provided");
+            }
 
             var formData = new Dictionary<string, string>
             {

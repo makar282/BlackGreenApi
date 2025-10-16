@@ -1,4 +1,6 @@
-﻿namespace SaveNature.Services.Interfaces
+﻿using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Application.Services.Interfaces
 {
     public interface IUserRepo
     {
@@ -7,5 +9,6 @@
         Task DeleteUserAsync(int id);
         Task<List<User>> GetAllUsersAsync();
         Task<User> GetByUserName(string userName);
-        public async Task<User> ResetPasswordAsync(string password)   }
+        Task<User> ResetPasswordAsync(string password);
+    }
 }

@@ -1,4 +1,6 @@
-﻿namespace SaveNature.Repositories
+﻿using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Application.Repositories
 {
     internal class UserEntity(Guid id, string userName, string passwordHash) : User(id, userName, passwordHash)
     {

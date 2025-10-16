@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.Options;
-using SaveNature.Infrastructure;
+﻿using BlackGreenApi.Application.Services.Interfaces;
+using BlackGreenApi.Core.Models;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace SaveNatureMvc.Services
+namespace BlackGreenApi.Application.Services
 {
     public class JwtProvider(IOptions<JwtOptions> jwtOptions) : IJwtProvider
     {

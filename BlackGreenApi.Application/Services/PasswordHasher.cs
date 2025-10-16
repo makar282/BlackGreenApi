@@ -1,6 +1,6 @@
-﻿using SaveNature.Services.Interfaces;
+﻿using BlackGreenApi.Application.Services.Interfaces;
 
-namespace SaveNatureMvc.Services
+namespace BlackGreenApi.Application.Services
 {
     public class PasswordHasher : IPasswordHasher
     {
@@ -12,7 +12,11 @@ namespace SaveNatureMvc.Services
         /// <exception cref="ArgumentNullException"></exception>
         public string Hash(string password)
         {
-            if (password is null) throw new ArgumentNullException(nameof(password));
+            if (password is null)
+            {
+                throw new ArgumentNullException(nameof(password));
+            }
+
             string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(password);
             return passwordHash;
         }

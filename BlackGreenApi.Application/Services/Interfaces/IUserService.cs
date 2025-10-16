@@ -1,4 +1,4 @@
-﻿namespace SaveNature.Services.Interfaces
+﻿namespace BlackGreenApi.Application.Services.Interfaces
 {
     public interface IUserService
     {

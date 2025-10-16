@@ -1,6 +1,7 @@
-﻿using SaveNature.Services.Interfaces;
+﻿using BlackGreenApi.Application.Services.Interfaces;
+using BlackGreenApi.Core.Models;
 
-namespace SaveNature.Services
+namespace BlackGreenApi.Application.Services
 {
     public class RecommendationMatcherService : IRecommendationMatcher
     {

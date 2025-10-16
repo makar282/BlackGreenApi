@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
     [Authorize(Roles = "Admin")]
     [ApiController]

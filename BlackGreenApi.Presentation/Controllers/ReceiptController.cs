@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    [ApiController]
+	 [ApiController]
     [Route("api/[controller]")]
     public class ReceiptController(HttpClient httpClient,
                              ApplicationDbContext dbContext,

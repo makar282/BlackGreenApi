@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    [Route("api/[controller]")]
+	 [Route("api/[controller]")]
     [Authorize]
     public class UserController(IUserService userService, ApplicationDbContext dbContext) : Controller
     {

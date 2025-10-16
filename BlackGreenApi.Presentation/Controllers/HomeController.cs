@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    public class HomeController(ILogger<HomeController> logger) : Controller
+	 public class HomeController(ILogger<HomeController> logger) : Controller
     {
         private readonly ILogger<HomeController> _logger = logger;
 

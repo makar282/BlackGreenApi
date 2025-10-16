@@ -1,6 +1,7 @@
-﻿using SaveNature.Services.Interfaces;
+﻿using BlackGreenApi.Application.Services.Interfaces;
+using BlackGreenApi.Core.Models;
 
-namespace SaveNature.Repositories
+namespace BlackGreenApi.Application.Repositories
 {
     public class UserRepo : IUserRepo
     {

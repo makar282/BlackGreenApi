@@ -1,4 +1,6 @@
-﻿namespace SaveNature.Infrastructure
+﻿using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Application.Services.Interfaces
 {
     public interface IJwtProvider
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    [ApiController]
+	 [ApiController]
     [AllowAnonymous]
     [Route("api/[controller]")]
     public class ItemsController(ApplicationDbContext context) : ControllerBase

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNatureMvc.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    [Authorize]
+	 [Authorize]
     public class ProfileController(ApplicationDbContext context, IPasswordHasher passwordHasher, IJwtProvider jwtProvider) : Controller
     {
         private readonly ApplicationDbContext _context = context;

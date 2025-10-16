@@ -1,4 +1,6 @@
-﻿namespace SaveNature.Services.Interfaces
+﻿using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Application.Services.Interfaces
 {
     public interface IRecommendationMatcher
     {

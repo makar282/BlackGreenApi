@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SaveNature.Controllers
+namespace BlackGreenApi.Presentation.Controllers
 {
-    [Authorize]
+	 [Authorize]
     [Route(template: "api/receipt")]
     [ApiController]
     public class DashboardController(ILogger<DashboardController> logger, ApplicationDbContext dbContext) : ControllerBase

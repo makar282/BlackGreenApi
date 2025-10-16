@@ -1,7 +1,6 @@
-﻿using SaveNature.Infrastructure;
-using SaveNature.Services.Interfaces;
+﻿using BlackGreenApi.Application.Services.Interfaces;
 
-namespace SaveNature.Core.Services
+namespace BlackGreenApi.Application.Services
 {
     public class UserService(HttpClient httpClient,
                             ApplicationDbContext dbContext,
@@ -24,7 +23,9 @@ namespace SaveNature.Core.Services
             var user = User.Create(Guid.NewGuid(), userName, passwordHash);
 
             if (user == null)
+            {
                 throw new Exception("User not found");
+            }
 
             await _userRepo.Add(user);
             await _dbContext.SaveChangesAsync();
@@ -61,7 +62,10 @@ namespace SaveNature.Core.Services
 
             List<Item> items = [.. receipts.SelectMany(r => r.Items)];
 
-            if (items == null || items.Count == 0) return 50; // Нейтральный рейтинг, если нет товаров
+            if (items == null || items.Count == 0)
+            {
+                return 50; // Нейтральный рейтинг, если нет товаров
+            }
 
             // Подгружаем рекомендации для всех товаров
             List<int> recommendationIds = items

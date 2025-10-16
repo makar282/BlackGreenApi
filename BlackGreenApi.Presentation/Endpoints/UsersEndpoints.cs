@@ -1,4 +1,7 @@
-﻿namespace SaveNature.Endpoints
+﻿using BlackGreenApi.Application.Services;
+using BlackGreenApi.Core.Models;
+
+namespace BlackGreenApi.Presentation.Endpoints
 {
     public static class UsersEndpoints
     {
