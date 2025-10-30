@@ -11,10 +11,13 @@ namespace BlackGreenApi.Presentation.Controllers
 	 public class EcoRatingController : Controller
 	 {
 		  private readonly IEcoRatingManager _ecoRatingManager;
+		  private readonly HttpClient _httpClient;
 
-		  public EcoRatingController(IEcoRatingManager ecoRatingManager)
+
+		  public EcoRatingController(IEcoRatingManager ecoRatingManager, HttpClient httpClient)
 		  {
 				_ecoRatingManager = ecoRatingManager;
+				_httpClient = httpClient;
 		  }
 
 		  [HttpGet("get-ecorating")]

@@ -1,6 +1,5 @@
 ﻿using BlackGreenApi.Application.Services;
 using BlackGreenApi.Core.Contracts;
-using BlackGreenApi.Core.Models;
 
 namespace BlackGreenApi.Presentation.Endpoints
 {

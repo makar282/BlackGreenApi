@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlackGreenApi.Application.Services
 {
-    public class EcoRatingManager(ILogger<UserService> logger, ApplicationDbContext dbContext) : IEcoRatingManager
+    public class EcoRatingManager(ILogger<UserService> logger, ApplicationDbContext dbContext, HttpClient httpClient) : IEcoRatingManager
     {
         public async Task<int> CalculateAndSaveEcoRatingAsync(string _userName)
         {

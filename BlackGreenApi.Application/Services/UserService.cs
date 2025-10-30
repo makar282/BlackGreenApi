@@ -4,7 +4,7 @@ using BlackGreenApi.Core.Models;
 namespace BlackGreenApi.Application.Services
 {
     public class UserService(
-        ILogger<UserService> logger, IUserRepo userRepo, IPasswordHasher passwordHasher, IJwtProvider jwtProvider) : IUserService
+        ILogger<UserService> logger, IUserRepo userRepo, IPasswordHasher passwordHasher, IJwtProvider jwtProvider, HttpClient httpClient) : IUserService
 
     {
         // сервисный метод регистрации

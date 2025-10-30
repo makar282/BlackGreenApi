@@ -12,7 +12,7 @@ namespace BlackGreenApi.Presentation.Controllers
 	 {
 		  private readonly IUserService _userService;
 
-		  public UserController(IUserService userService)
+		  public UserController(IUserService userService, HttpClient httpClient)
 		  {
 				_userService = userService;
 		  }

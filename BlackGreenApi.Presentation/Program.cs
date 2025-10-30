@@ -28,6 +28,7 @@ services.AddOpenApi(options =>
 
 services.AddEndpointsApiExplorer();
 services.AddOpenApi();
+//services.AddControllers;
 services.AddControllersWithViews();
 services.AddCors(options =>
 {
@@ -58,14 +59,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
 	 app.MapOpenApi();
-
-    app.UseSwaggerUI(options =>
+	 app.MapControllers();
+	 app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/openapi/v1.json", "Open Api V1");
     });
 }
-
-app.MapGet("/", () => "Hello world!");
 
 // Настройка pipeline обработки HTTP-запросов
 if (app.Environment.IsDevelopment())
@@ -88,8 +87,6 @@ app.UseStaticFiles();
 // Включение HTTPS и маршрутизации
 app.UseHttpsRedirection();
 app.UseRouting();
-
-app.MapOpenApi("/openapi/{documentName}.yaml");
 
 // Настройка CORS и авторизации                          
 app.UseCors("AllowLocalhost");
