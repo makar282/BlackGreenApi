@@ -1,8 +1,6 @@
 ﻿//using Microsoft.AspNetCore.Identity;
 //using Microsoft.AspNetCore.Mvc;
 //using Microsoft.EntityFrameworkCore;
-//using SaveNature.Data;
-//using SaveNature.Models;
 //using System.Threading.Tasks;
 
 //namespace BlackGreenApi.Presentation.Controllers

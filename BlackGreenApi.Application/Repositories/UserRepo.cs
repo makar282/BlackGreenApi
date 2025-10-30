@@ -1,5 +1,7 @@
 ﻿using BlackGreenApi.Application.Services.Interfaces;
 using BlackGreenApi.Core.Models;
+using BlackGreenApi.DataAccess.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlackGreenApi.Application.Repositories
 {
@@ -14,15 +16,14 @@ namespace BlackGreenApi.Application.Repositories
             _passwordHasher = passwordHasher;
         }
 
-        public async Task Add(User user)
+        public async Task AddUserAsync(User user)
         {
-            var userEntity = new UserEntity
+            var userEntity = new UserEntity()
             {
+                Id = user.Id,
                 UserName = user.UserName,
                 PasswordHash = _passwordHasher.Hash(user.PasswordHash),
-                Email = user.Email,
-                Role = user.Role,
-                ApiToken = user.ApiToken
+                //ApiToken = user.ApiToken
             };
 
             await _context.Users.AddAsync(userEntity);
@@ -36,63 +37,69 @@ namespace BlackGreenApi.Application.Repositories
                  .FirstOrDefaultAsync(u => u.UserName == userName);
 
             if (userEntity == null)
-                throw new KeyNotFoundException($"User with username '{userName}' not found.");
-
-            return new User
             {
-                Id = userEntity.Id,
-                UserName = userEntity.UserName,
-                PasswordHash = userEntity.PasswordHash
-            };
-        }
+                throw new KeyNotFoundException($"User with username '{userName}' not found.");
+            }
 
-        public async Task<List<User>> GetAllUsersAsync()
+				return new User(
+					 userEntity.Id,
+					 userEntity.UserName,
+					 userEntity.PasswordHash
+				// если нужно, можно добавить ApiToken через отдельный метод или свойство
+				);
+
+		  }
+
+		  public async Task<List<User>> GetAllUsersAsync()
         {
             var usersEntity = await _context.Users
                  .AsNoTracking()
                  .ToListAsync();
 
-            return usersEntity.Select(u => new User
-            {
-                Id = u.Id,
-                UserName = u.UserName,
-                Email = u.Email,
-                Role = u.Role,
-                ApiToken = u.ApiToken,
-                PasswordHash = u.PasswordHash
-            }).ToList();
-        }
+				return usersEntity.Select(u => new User(u.Id, u.UserName, u.PasswordHash)).ToList();
+		  }
 
-        public async Task ResetPasswordAsync(int userId, string newPassword)
+		  public async Task ResetPasswordAsync(int userId, string newPassword)
         {
             var userEntity = await _context.Users.FindAsync(userId);
             if (userEntity == null)
+            {
                 throw new KeyNotFoundException("Пользователь не найден");
+            }
 
-            userEntity.PasswordHash = _passwordHasher.Hash(newPassword);
-            await _context.SaveChangesAsync();
+				userEntity.UpdatePasswordHash(_passwordHasher.Hash(newPassword));
+				await _context.SaveChangesAsync();
         }
 
         public async Task UpdateUserAsync(User user)
         {
             var userEntity = await _context.Users.FindAsync(user.Id);
-            if (userEntity == null) throw new KeyNotFoundException("Пользователь не найден");
+            if (userEntity == null)
+            {
+                throw new KeyNotFoundException("Пользователь не найден");
+            }
 
-            userEntity.UserName = user.UserName;
-            userEntity.Email = user.Email;
-            userEntity.Role = user.Role;
-            userEntity.ApiToken = user.ApiToken;
+				userEntity.UpdateUser(user);
+				//userEntity.ApiToken = user.ApiToken;
 
-            await _context.SaveChangesAsync();
+				await _context.SaveChangesAsync();
         }
 
         public async Task DeleteUserAsync(int userId)
         {
             var userEntity = await _context.Users.FindAsync(userId);
-            if (userEntity == null) throw new KeyNotFoundException("Пользователь не найден");
+            if (userEntity == null)
+            {
+                throw new KeyNotFoundException("Пользователь не найден");
+            }
 
             _context.Users.Remove(userEntity);
             await _context.SaveChangesAsync();
+        }
+
+        Task<User> IUserRepo.ResetPasswordAsync(int userId, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

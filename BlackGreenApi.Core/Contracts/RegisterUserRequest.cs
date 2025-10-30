@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SaveNature.Contracts
+namespace BlackGreenApi.Core.Contracts
 {
     public record RegisterUserRequest(
             [Required] string UserName,

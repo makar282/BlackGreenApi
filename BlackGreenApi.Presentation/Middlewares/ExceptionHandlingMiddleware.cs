@@ -1,4 +1,4 @@
-﻿namespace SaveNature.Middlewares
+﻿namespace BlackGreenApi.Presentation.Middlewares
 {
 	 public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
 	 {

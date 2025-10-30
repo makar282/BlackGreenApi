@@ -8,6 +8,5 @@
   </Project>
   <Project Path="BlackGreenApi.Presentation/BlackGreenApi.Presentation.csproj">
     <BuildDependency Project="BlackGreenApi.Application/BlackGreenApi.Application.csproj" />
-    <BuildDependency Project="BlackGreenApi.Core/BlackGreenApi.Core.csproj" />
   </Project>
 </Solution>
